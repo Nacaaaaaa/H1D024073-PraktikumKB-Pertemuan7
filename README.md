@@ -31,7 +31,7 @@ Fungsi 'LabelEncoder' dari pustaka scikit-learn melakukan pemetaan data kategori
 #### Dampak Output:
 Entri string bertransformasi menjadi representasi numerik terstandarisasi, di mana kategori 'Iris-setosa' diwakili angka 0, 'Iris-versicolor' angka 1, dan 'Iris-virginica' angka 2.
 
-#### Kode Konfigurasi dan Pelaksanaan Pelatihan (Compile & Fit):
+#### Kode Konstruksi Arsitektur Jaringan (Sequential):
 - model = Sequential([
     Input(shape=X_train.shape[1:]),
     Dense(1000, activation='relu'),
@@ -44,7 +44,7 @@ Mendefinisikan topologi jaringan saraf secara linier berurutan menggunakan model
 #### Dampak Output:
 Terbentuk struktur model komputasi berlapis. Penggunaan fungsi 'Softmax' pada ujung lapisan memastikan bahwa akumulasi total nilai keluaran dari ketiga neuron menghasilkan probabilitas pecahan berbobot total 1.0.
 
-#### Kode Eksekusi Prediksi pada Data Uji:
+#### Kode Konfigurasi dan Pelaksanaan Pelatihan (Compile & Fit):
 - model.compile(optimizer='adam', loss='sparse_categorical_crossentropy', metrics=['accuracy'])
 - history = model.fit(X_train, y_train, epochs=50, batch_size=32, validation_data=(X_test, y_test))
 #### Penjelasan Kode:
@@ -52,24 +52,10 @@ Fungsi 'compile' mengonfigurasi parameter pembelajaran model dengan menetapkan a
 #### Dampak Output:
 Terminal akan menampilkan visualisasi log pergerakan nilai kegagalan (loss) yang terus menurun dan tingkat akurasi (accuracy) yang meningkat di setiap tahapan epoch, baik pada himpunan data pelatihan maupun validasi.
 
-#### Petikan Kode Bagian 5:
+#### Kode Eksekusi Prediksi pada Data Uji:
 - predictions = model.predict(X_test)
 - predicted_classes = predictions.argmax(axis=1)
-#### Penjelasan Operasional:
+#### Penjelasan Kode:
 Fungsi 'predict' memproses data uji untuk menghitung prediksi probabilitas. Perintah 'argmax(axis=1)' menyaring indeks neuron mana yang menghasilkan nilai persentase keyakinan paling tinggi dari matriks output.
 #### Dampak Output:
 Menghasilkan output berupa array angka integer (0, 1, atau 2) yang merepresentasikan keputusan mutlak hasil tebakan klasifikasi model AI terhadap subset data uji.
-
-### 4. Panduan Eksekusi Repositori (Cloning)
-
-- Mengunduh repositori kerja dari server GitHub ke komputer lokal.
-Sintaks Perintah: git clone https://github.com/[Username-GitHub-Anda]/H1D024094-PraktikumKB-Pertemuan7.git
-
-- Langkah 2: Mengubah direktori aktif terminal menuju folder proyek hasil proses kloning.
-Sintaks Perintah: cd H1D024094-PraktikumKB-Pertemuan7
-
-- Langkah 3: Memasang paket ketergantungan modul pustaka Python yang diwajibkan oleh sistem.
-Sintaks Perintah: pip install tensorflow scikit-learn pandas numpy matplotlib seaborn
-
- Langkah 4: Menjalankan skrip utama sistem klasifikasi kecerdasan buatan.
-Sintaks Perintah: python main.py

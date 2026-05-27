@@ -3,6 +3,8 @@
 **Identitas Mahasiswa:**
 * Nama: Nalendra Wicaksana
 * NIM: H1D024073
+* Shift Lama: E
+* Shift Baru: F
 
 ## 1. Tujuan Penugasan
 Mengembangkan sistem klasifikasi berbasis Jaringan Syaraf Tiruan (JST) Multi-Layer Perceptron untuk memprediksi spesies bunga Iris berdasarkan matriks dimensi kelopak (sepal) dan mahkota (petal) secara lokal menggunakan framework TensorFlow dan Keras.

@@ -15,20 +15,20 @@ Mengembangkan sistem klasifikasi berbasis Jaringan Syaraf Tiruan (JST) Multi-Lay
 ### 3. Penjelasan Kerja Kode dan Dampak Output
 
 #### Petikan Kode Bagian 1:
-dataset = pd.read_csv('iris.data', header=None, sep=',')
-X = dataset.iloc[:, :-1].values
-y = dataset.iloc[:, -1].values
-Penjelasan Operasional:
+- dataset = pd.read_csv('iris.data', header=None, sep=',')
+- X = dataset.iloc[:, :-1].values
+- y = dataset.iloc[:, -1].values
+#### Penjelasan Operasional:
 Baris ini menginstruksikan modul Pandas untuk membaca file eksternal lokal bernama 'iris.data'. Objek dipecah ke dalam array dua dimensi melalui fungsi 'iloc'. Variabel 'X' mengambil seluruh kolom kecuali kolom terakhir sebagai representasi matriks dimensi fisik bunga, sedangkan variabel 'y' mengisolasi kolom akhir sebagai target target spesies.
-Dampak Output:
+#### Dampak Output:
 Menghasilkan struktur data matriks numerik berukuran 150 sampel dengan 4 parameter input, serta vektor label bertipe string sepanjang 150 entri.
 
-Petikan Kode Bagian 2:
-label_encoder = LabelEncoder()
-y = label_encoder.fit_transform(y)
-Penjelasan Operasional:
+#### Petikan Kode Bagian 2:
+- label_encoder = LabelEncoder()
+- y = label_encoder.fit_transform(y)
+#### Penjelasan Operasional:
 Fungsi 'LabelEncoder' dari pustaka scikit-learn melakukan pemetaan data kategori string pada variabel 'y' menjadi bentuk indeks integer berurutan secara otomatis.
-Dampak Output:
+#### Dampak Output:
 Entri string bertransformasi menjadi representasi numerik terstandarisasi, di mana kategori 'Iris-setosa' diwakili angka 0, 'Iris-versicolor' angka 1, dan 'Iris-virginica' angka 2.
 
 Petikan Kode Bagian 3:

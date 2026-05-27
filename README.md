@@ -4,17 +4,17 @@
 * Nama: Nalendra Wicaksana
 * NIM: H1D024073
 
-### 1. Tujuan Penugasan
+## 1. Tujuan Penugasan
 Mengembangkan sistem klasifikasi berbasis Jaringan Syaraf Tiruan (JST) Multi-Layer Perceptron untuk memprediksi spesies bunga Iris berdasarkan matriks dimensi kelopak (sepal) dan mahkota (petal) secara lokal menggunakan framework TensorFlow dan Keras.
 
-### 2. Struktur Repositori
+## 2. Struktur Repositori
 - main_iris.py : Berisi baris kode pemrograman Python utama.
 - iris.data : Dataset numerik kelopak dan mahkota bunga Iris.
 - README.md : Berisi panduan teknis dan analisis operasional sistem.
 
-### 3. Penjelasan Kerja Kode dan Dampak Output
+## 3. Penjelasan Kerja Kode dan Dampak Output
 
-#### Kode Pemuatan Dataset dan Pemisahan Atribut:
+### Kode Pemuatan Dataset dan Pemisahan Atribut:
 - dataset = pd.read_csv('iris.data', header=None, sep=',')
 - X = dataset.iloc[:, :-1].values
 - y = dataset.iloc[:, -1].values
@@ -23,7 +23,7 @@ Baris ini menginstruksikan modul Pandas untuk membaca file eksternal lokal berna
 #### Dampak Output:
 Menghasilkan struktur data matriks numerik berukuran 150 sampel dengan 4 parameter input, serta vektor label bertipe string sepanjang 150 entri.
 
-#### Kode Transformasi Kategori String (Label Encoding):
+### Kode Transformasi Kategori String (Label Encoding):
 - label_encoder = LabelEncoder()
 - y = label_encoder.fit_transform(y)
 #### Penjelasan Kode:
@@ -31,7 +31,7 @@ Fungsi 'LabelEncoder' dari pustaka scikit-learn melakukan pemetaan data kategori
 #### Dampak Output:
 Entri string bertransformasi menjadi representasi numerik terstandarisasi, di mana kategori 'Iris-setosa' diwakili angka 0, 'Iris-versicolor' angka 1, dan 'Iris-virginica' angka 2.
 
-#### Kode Konstruksi Arsitektur Jaringan (Sequential):
+### Kode Konstruksi Arsitektur Jaringan (Sequential):
 - model = Sequential([
     Input(shape=X_train.shape[1:]),
     Dense(1000, activation='relu'),
@@ -44,7 +44,7 @@ Mendefinisikan topologi jaringan saraf secara linier berurutan menggunakan model
 #### Dampak Output:
 Terbentuk struktur model komputasi berlapis. Penggunaan fungsi 'Softmax' pada ujung lapisan memastikan bahwa akumulasi total nilai keluaran dari ketiga neuron menghasilkan probabilitas pecahan berbobot total 1.0.
 
-#### Kode Konfigurasi dan Pelaksanaan Pelatihan (Compile & Fit):
+### Kode Konfigurasi dan Pelaksanaan Pelatihan (Compile & Fit):
 - model.compile(optimizer='adam', loss='sparse_categorical_crossentropy', metrics=['accuracy'])
 - history = model.fit(X_train, y_train, epochs=50, batch_size=32, validation_data=(X_test, y_test))
 #### Penjelasan Kode:
@@ -52,7 +52,7 @@ Fungsi 'compile' mengonfigurasi parameter pembelajaran model dengan menetapkan a
 #### Dampak Output:
 Terminal akan menampilkan visualisasi log pergerakan nilai kegagalan (loss) yang terus menurun dan tingkat akurasi (accuracy) yang meningkat di setiap tahapan epoch, baik pada himpunan data pelatihan maupun validasi.
 
-#### Kode Eksekusi Prediksi pada Data Uji:
+### Kode Eksekusi Prediksi pada Data Uji:
 - predictions = model.predict(X_test)
 - predicted_classes = predictions.argmax(axis=1)
 #### Penjelasan Kode:

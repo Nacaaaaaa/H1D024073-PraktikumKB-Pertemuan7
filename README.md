@@ -14,7 +14,7 @@ Mengembangkan sistem klasifikasi berbasis Jaringan Syaraf Tiruan (JST) Multi-Lay
 
 ### 3. Penjelasan Kerja Kode dan Dampak Output
 
-Petikan Kode Bagian 1:
+## Petikan Kode Bagian 1:
 dataset = pd.read_csv('iris.data', header=None, sep=',')
 X = dataset.iloc[:, :-1].values
 y = dataset.iloc[:, -1].values
